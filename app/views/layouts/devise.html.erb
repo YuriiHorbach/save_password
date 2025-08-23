@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Save Pass App" %></title>
+    <title><%= "Save Pass App Secure Authentication" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -18,15 +18,19 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body>
-    <%= render partial:'shared/flash' %>
-    <%= render partial:'shared/navbar' %>
-    <div class="container">
-      <%= yield %>
+    <div class="vh-100">
+      <div class="h-100 container d-flex flex-column justify-content-center align-items-center">
+        <div class="card card--auth shadow-sm w-100">
+          <div class="card-body">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
