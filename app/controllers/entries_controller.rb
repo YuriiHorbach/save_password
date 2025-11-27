@@ -21,6 +21,6 @@ class EntriesController < ApplicationController
 
   def entry_params
     # params.require(:entry).permit(:name, :url, :username, :password)
-    params.expect(entry: [:name, :url, :username, :password])
+    params.expect(entry: [ :name, :url, :username, :password ])
   end
 end
